@@ -5,7 +5,7 @@ Ten10 Technical
 
 For the purpose of this test/demo I will only build the test scripting for testing only the requirements below and not test the login function, CSS .etc (for instance the logo isn't showing which could be a bug).
 
-Run test in terminal using - npm run cy:calctest
+To run test in terminal you can use "npm run cy:calctest"
 
 ## Assignment
 
