@@ -3,21 +3,21 @@
       "principal": "100",
       "rate": "1%",
       "duration": "Monthly",
-      "result": "3.08",
-      "total": "7503.08"
+      "result": "0.10",
+      "total": "100.10"
     },
     "2": {
       "principal": "15000",
       "rate": "15%",
       "duration": "Yearly",
-      "result": "3.08",
-      "total": "7503.08"
+      "result": "2250.00",
+      "total": "17250.00"
     },
     "3": {
-      "principal": "7500",
+      "principal": "8000",
       "rate": "7%",
       "duration": "Daily",
-      "result": "3.08",
-      "total": "7503.08"
+      "result": "1.53",
+      "total": "8001.53"
     }
 }

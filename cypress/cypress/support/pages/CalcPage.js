@@ -22,6 +22,7 @@ class CalcPage {
             testcase.total
             );
         });
+        cy.task('logToTerminal', `Testcase: ${testcaseID} complete`);
     }
 
     calculate(principal, rate, duration, result, total){

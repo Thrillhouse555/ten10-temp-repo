@@ -47,7 +47,15 @@ describe('Login Tests', () => {
   });
 
   it('Test Data - Test Case 1', () => {
-    CalcPage.testCase();
+    CalcPage.testCase('1');
+  });
+
+  it('Test Data - Test Case 2', () => {
+    CalcPage.testCase('2');
+  });
+
+  it('Test Data - Test Case 3', () => {
+    CalcPage.testCase('3');
   });
 
 
