@@ -2,7 +2,9 @@ class LoginPage {
 
   emailField = '#UserName'
   passwordField = '#Password'
-  submitButton = '#login-submit'
+  loginButton = '#login-submit'
+  logoutButton = '#logout-container button'
+  
 
     visit() {
       cy.visit('/Account/Login');
@@ -24,6 +26,16 @@ class LoginPage {
       this.fillUsername(username);
       this.fillPassword(password);
       this.submit();
+      cy.get(logoutButton).should('be.visible')
+      cy.task('logToTerminal', `User: ${username} is logged in`);
+    }
+
+    standardLogin() {
+      this.visit();
+      cy.fixture('users').then((users) => {
+      const user = users.standardUser;
+      this.login(user.username, user.password);
+      });
     }
 
   }

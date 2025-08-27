@@ -10,7 +10,8 @@ module.exports = defineConfig({
       // implement node event listeners here
       on ('task', {
         logToTerminal(message) {
-          console.log(message);
+          const timestamp = new Date().toISOString(); // e.g., 2025-08-27T14:33:00.123Z
+          console.log(`[${timestamp}] ${message}`);
           return null;
         }
       })

@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "cy:open": "npx cypress open",
-    "cy:smoketest": "npx cypress run --browser chrome --spec=cypress/e2e/test_suites/smoke_test.cy.js"
+    "cy:smoketest": "npx cypress run --browser chrome --spec=cypress/e2e/test_scripts/login.cy.js"
   },
   "keywords": [],
   "author": "",
