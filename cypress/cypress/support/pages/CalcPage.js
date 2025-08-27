@@ -11,17 +11,44 @@ class CalcPage {
     interestAmount = '#interestAmount'
     totalAmount = '#totalAmount'
 
+    testCase(testcaseID) {
+        cy.fixture('testcases').then((testcases) => {
+        const testcase = testcases[testcaseID];
+        this.calculate(
+            testcase.principal, 
+            testcase.rate, 
+            testcase.duration, 
+            testcase.result, 
+            testcase.total
+            );
+        });
+    }
+
+    calculate(principal, rate, duration, result, total){
+        this.principal(principal);
+        this.interestRate(rate);
+        this.durationSelect(duration);
+        this.consentChecked();
+        this.submit();
+        this.interestResult(result);
+        this.totalResult(total);
+    }
+
     logout() {
         cy.get(this.logoutButton).click();
         cy.get(this.loginButton).should('be.visible')
         cy.task('logToTerminal', `User is logged out`);
-      }
+    }
+
+    principal(amount) {
+        cy.get(this.principalSlider).invoke('val', amount).trigger('input');
+    }
 
     durationSelect(duration) {
         cy.get(this.durationList).find('[data-value="'+ duration + '"]').click({force: true});
         cy.get(this.duractionActive).should('contain', duration);
         cy.task('logToTerminal', `Duration :${duration} has been selected`);
-      }
+    }
 
     interestRate(rate) {
         cy.get(this.interestRateButton).click();

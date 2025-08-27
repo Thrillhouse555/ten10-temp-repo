@@ -17,7 +17,16 @@ describe('Login Tests', () => {
 
   it('Check interest rate is mandatory', () => {
     CalcPage.durationSelect('Monthly');
-    alcPage.consentChecked();
+    CalcPage.consentChecked();
+    CalcPage.submit();
+    CalcPage.alertPopUp('Please fill in all fields.');
+  });
+
+  it('Check slider cannot be 0', () => {
+    CalcPage.principal('0')
+    CalcPage.interestRate('15%');
+    CalcPage.durationSelect('Monthly');
+    CalcPage.consentChecked();
     CalcPage.submit();
     CalcPage.alertPopUp('Please fill in all fields.');
   });
@@ -29,13 +38,16 @@ describe('Login Tests', () => {
     CalcPage.alertPopUp('Please fill in all fields.');
   });
 
-  it('It calculates an interest rate', () => {
+  it('It calculates an interest rate when slider and duration not initially touched', () => {
     CalcPage.interestRate('15%');
-    CalcPage.durationSelect('Monthly');
     CalcPage.consentChecked();
     CalcPage.submit();
-    CalcPage.interestResult('112.50');
-    CalcPage.totalResult('7612.50');
+    CalcPage.interestResult('3.08');
+    CalcPage.totalResult('7503.08');
+  });
+
+  it('Test Data - Test Case 1', () => {
+    CalcPage.testCase();
   });
 
 

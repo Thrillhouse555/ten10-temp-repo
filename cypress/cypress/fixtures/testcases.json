@@ -1,0 +1,23 @@
+{
+    "1": {
+      "principal": "100",
+      "rate": "1%",
+      "duration": "Monthly",
+      "result": "3.08",
+      "total": "7503.08"
+    },
+    "2": {
+      "principal": "15000",
+      "rate": "15%",
+      "duration": "Yearly",
+      "result": "3.08",
+      "total": "7503.08"
+    },
+    "3": {
+      "principal": "7500",
+      "rate": "7%",
+      "duration": "Daily",
+      "result": "3.08",
+      "total": "7503.08"
+    }
+}
