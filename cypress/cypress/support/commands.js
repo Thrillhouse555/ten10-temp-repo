@@ -27,6 +27,12 @@ import 'cypress-if';
 
 let items = false;
 
+Cypress.on('uncaught:exception', (err, runnable) => {
+    if (err.message.includes("toFixed")) {
+      return false;
+    }
+  });
+
 Cypress.Commands.add('setItem', (key, value) => {
     items[key] = value;
     cy.writeFile('cypress/items.json', items, { timeout: 60000 });

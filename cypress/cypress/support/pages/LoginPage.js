@@ -19,14 +19,14 @@ class LoginPage {
     }
 
     submit() {
-      cy.get(this.submitButton).click();
+      cy.get(this.loginButton).click();
     }
 
     login(username, password) {
       this.fillUsername(username);
       this.fillPassword(password);
       this.submit();
-      cy.get(logoutButton).should('be.visible')
+      cy.get(this.logoutButton).should('be.visible')
       cy.task('logToTerminal', `User: ${username} is logged in`);
     }
 
