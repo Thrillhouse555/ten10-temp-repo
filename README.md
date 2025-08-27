@@ -1,6 +1,12 @@
 # ten10-temp-repo
 Ten10 Technical
 
+## Note
+
+For the purpose of this test/demo I will only build the test scripting for testing only the requirements below and not test the login function, CSS .etc (for instance the logo isn't showing which could be a bug).
+
+Run test in terminal using - npm run cy:calctest
+
 ## Assignment
 
 As a product owner, I want to build a responsive interest calculator web application.
