@@ -5,6 +5,7 @@ class CalcPage {
     durationList = '#durationList'
     duractionActive = '.list-group-item.list-group-item-action.active'
     principalSlider = '#customRange1'
+    principalValue = '#selectedValue'
     interestRateButton = '#dropdownMenuButton'
     consentCheckbox = '#gridCheck1'
     calcButton = '.btn.btn-primary'
@@ -43,6 +44,8 @@ class CalcPage {
 
     principal(amount) {
         cy.get(this.principalSlider).invoke('val', amount).trigger('input');
+        cy.get(this.principalValue).should('contain', amount);
+        cy.task('logToTerminal', `Principal :${amount} has been selected`);
     }
 
     durationSelect(duration) {
