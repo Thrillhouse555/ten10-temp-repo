@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: 'https://libraryofbabel.info/',
+    baseUrl: 'http://3.8.242.61/',
     chromeWebSecurity: false,
     watchForFileChanges: false,
     //testIsolation: false,
